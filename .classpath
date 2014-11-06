@@ -19,4 +19,6 @@
   <classpathentry kind="var" path="M2_REPO/org/nutz/nutz/1.b.51/nutz-1.b.51.jar"/>
   <classpathentry kind="var" path="M2_REPO/mysql/mysql-connector-java/5.1.33/mysql-connector-java-5.1.33.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/alibaba/druid/1.0.9/druid-1.0.9.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/aspectj/aspectjweaver/1.6.1/aspectjweaver-1.6.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar" sourcepath="M2_REPO/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3-sources.jar"/>
 </classpath>
