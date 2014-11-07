@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"  
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -12,7 +13,9 @@
 	   					   http://www.springframework.org/schema/context  
 	   					   http://www.springframework.org/schema/context/spring-context-2.5.xsd  
 	   					   http://www.springframework.org/schema/aop  
-	   					   http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
+	   					   http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	   					   http://code.alibabatech.com/schema/dubbo  
+        				  http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
 	default-lazy-init="true">
 	<!-- 使用annotation 自动注册bean -->
 	<context:component-scan base-package="com.xqar.nutz01" />
@@ -70,4 +73,12 @@
 	</bean>
 	<bean id="springDaoRunner" class="com.xqar.nutz01.SpringDaoRunner" />
 
+<!--  dubbo 配置 -->
+    <dubbo:application name="dubbos01" />       
+    <dubbo:registry  protocol="zookeeper" address="127.0.0.1:2181" />  
+    <dubbo:monitor protocol="registry" />
+    <dubbo:protocol name="dubbo" port="20880" />
+    <!-- 扫描注解包路径，多个包用逗号分隔，不填pacakge表示扫描当前ApplicationContext中所有的类 -->
+ <dubbo:annotation package="com.xqar.dubbo01.service" />
+ 
 </beans> 
